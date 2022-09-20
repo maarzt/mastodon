@@ -113,6 +113,12 @@ public class MamutBranchViewTrackSchemeHierarchy extends MamutBranchViewTrackSch
 					level++;
 				return level;
 			}
+
+			@Override
+			public String getFirstLabel( BranchSpot branchSpot )
+			{
+				return branchSpot.getFirstLabel();
+			}
 		}
 	}
 
