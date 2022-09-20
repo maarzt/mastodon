@@ -109,6 +109,14 @@ public class BranchSpot extends AbstractListenableVertex< BranchSpot, BranchLink
 		return x;
 	}
 
+	public int getFirstTimePoint()
+	{
+		final Spot ref = vertexBimap.createRef();
+		final int t = vertexBimap.getObject( getFirstLinkedVertexId(), ref ).getTimepoint();
+		vertexBimap.releaseRef( ref );
+		return t;
+	}
+
 	@Override
 	public int getTimepoint()
 	{
